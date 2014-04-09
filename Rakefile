@@ -3,7 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Backlogger::Application.load_tasks
+GHStatus::Application.load_tasks
 
 namespace :cache do
   task clear: :environment do

@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-  has_many :backlogs
-
   def self.from_github_omniauth(auth_hash)
     puts auth_hash.to_yaml
     self.find_or_initialize_by(github_uid: auth_hash.uid).tap do |user|

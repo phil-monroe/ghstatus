@@ -1,4 +1,4 @@
-Backlogger::Application.routes.draw do
+GHStatus::Application.routes.draw do
   get '/auth/github',          as: 'auth_github'
   get '/auth/github/callback', to: 'sessions#github'
   get '/logout',               to: 'sessions#destroy'

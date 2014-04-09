@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-Backlogger::Application.config.session_store :cookie_store, key: '_ghstatus_session'
+GHStatus::Application.config.session_store :cookie_store, key: '_ghstatus_session'
