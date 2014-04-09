@@ -1,0 +1,7 @@
+- max_cols = (params[:max_cols] || 3).to_i
+- @repos.each_slice(max_cols) do |repos|
+  .row
+    - col_size = 12 / [repos.size, 1].max
+    - repos.each do |repo|
+      %div{ class:"col-lg-#{col_size}" }
+        = render 'repo', gh_repo_name: repo.name, statuses: repo.statuses

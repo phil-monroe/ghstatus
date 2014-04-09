@@ -1,0 +1,17 @@
+.panel.panel-default
+  %a.panel-title{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapse-#{status.sha}"}
+    .panel-heading
+      .pull-right
+        %span.label{class: status_label_class(status.state) + " label"}
+          = status.state
+      %div{style: 'overflow:hidden; padding-right:2em'}
+        = branch
+
+
+  .panel-collapse.collapse{id: "collapse-#{status.sha}"}
+    .panel-body
+      - if status.statuses.present?
+        %a{href: status.statuses.first.try(:target_url), target: "_blank"}
+          = status.statuses.first.description
+      - else
+        no extra info

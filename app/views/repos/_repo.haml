@@ -1,0 +1,11 @@
+%h2
+  = gh_repo_name
+
+#accordion.panel-group
+  - if statuses['master']
+    - status = statuses.delete('master')
+    = render 'branch', branch: 'master', status: status
+
+
+  - statuses.each do |branch, status|
+    = render 'branch', branch: branch, status: status

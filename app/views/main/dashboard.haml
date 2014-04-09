@@ -1,0 +1,5 @@
+- @repos.each_slice(3) do |repos|
+  .row
+    - repos.each do |repo|
+      .col-lg-4
+        = render 'repo', gh_repo_name: repo.name, statuses: repo.statuses
